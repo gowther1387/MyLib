@@ -31,24 +31,9 @@ public class LivroController {
         return livroService.getLivroTitulo(titulo);
     }
 
-    @GetMapping
-    public List<Livro> getLivros(){
-        return livroRepository.findAll();
-    }
-
-    @GetMapping
-    public List<Livro> getLivros(){
-        return livroRepository.findAll();
-    }
-
-    @GetMapping
-    public List<Livro> getLivros(){
-        return livroRepository.findAll();
-    }
-
-
     @DeleteMapping
-    public void deleteLivro(@RequestBody UUID id){
-        livroRepository.deleteById(id);
+    public void deleteLivro(UUID id){
+        livroService.deleteLivro(id);
+
     }
 }

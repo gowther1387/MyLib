@@ -42,8 +42,8 @@ public class LivroService {
         return livroRepository.findAllByCategoria(categoria);
     }
 
-    public boolean deleteLivro(UUID id){
-        return deleteLivro(id);
+    public void deleteLivro(UUID id){
+         deleteLivro(id);
     }
 
 }
