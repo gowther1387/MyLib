@@ -19,7 +19,7 @@ public class Autor {
     private String nome;
 
     @Column(name = "numlivros")
-    private double numLivros;
+private double numLivros;
 
     @Column(name = "idade")
     private LocalDate idade;
