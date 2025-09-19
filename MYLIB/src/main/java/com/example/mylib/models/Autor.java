@@ -15,11 +15,11 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID autorId;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     private String nome;
 
     @Column(name = "numlivros")
-private double numLivros;
+    private double numLivros;
 
     @Column(name = "idade")
     private LocalDate idade;
