@@ -1,4 +1,4 @@
-package com.example.mylib.Errors;
+package com.example.mylib.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
