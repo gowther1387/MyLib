@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -29,6 +30,9 @@ public class User {
     @Column(name = "senha")
     private long senha;
 
+    @ManyToOne()
+    @JoinColumn(name = "user_id")
+    private Biblioteca biblioteca;
 
     public UUID getId() {
         return id;
