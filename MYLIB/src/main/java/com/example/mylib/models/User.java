@@ -14,7 +14,8 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @Column(name = "user_id")
+    private long userId;
 
     @Column(name = "nome")
     @NotBlank
@@ -34,36 +35,12 @@ public class User {
     @JoinColumn(name = "user_id")
     private Biblioteca biblioteca;
 
-    public UUID getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public long getSenha() {
-        return senha;
-    }
-
-    public void setSenha(long senha) {
-        this.senha = senha;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getNome() {
@@ -74,21 +51,53 @@ public class User {
         this.nome = nome;
     }
 
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public long getSenha() {
+        return senha;
+    }
+
+    public void setSenha(long senha) {
+        this.senha = senha;
+    }
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof User user)) return false;
-        return admin == user.admin && senha == user.senha && Objects.equals(id, user.id) && Objects.equals(nome, user.nome) && Objects.equals(email, user.email);
+        return admin == user.admin && senha == user.senha && Objects.equals(userId, user.userId) && Objects.equals(nome, user.nome) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, admin, email, senha);
+        return Objects.hash(userId, nome, admin, email, senha);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id=" + userId +
                 ", nome='" + nome + '\'' +
                 ", admin=" + admin +
                 ", email='" + email + '\'' +

@@ -14,7 +14,7 @@ public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "autor_id")
-    private UUID autorId;
+    private long autorId;
 
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -25,11 +25,11 @@ public class Autor {
     @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
 
-    public UUID getAutorId() {
+    public long getAutorId() {
         return autorId;
     }
 
-    public void setAutorId(UUID autorId) {
+    public void setAutorId(long autorId) {
         this.autorId = autorId;
     }
 

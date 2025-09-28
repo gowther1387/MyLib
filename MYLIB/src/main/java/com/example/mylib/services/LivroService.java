@@ -6,6 +6,7 @@ import com.example.mylib.repositories.LivroRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -43,7 +44,7 @@ public class LivroService {
     }
 
     public void deleteLivro(UUID id){
-         deleteLivro(id);
+        livroRepository.deleteById(id);
     }
 
 }

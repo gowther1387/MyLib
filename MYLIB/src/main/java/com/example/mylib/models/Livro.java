@@ -14,7 +14,7 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "livro_id")
-    private UUID id;
+    private long id;
 
 
     @Column(name = "titulo")
@@ -36,11 +36,11 @@ public class Livro {
     private Autor autor;
 
 
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(long id) {
         this.id = id;
     }
 
