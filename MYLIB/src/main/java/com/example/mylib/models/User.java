@@ -29,7 +29,7 @@ public class User {
     private String email;
     
     @Column(name = "senha")
-    private long senha;
+    private String senha;
 
     @ManyToOne()
     @JoinColumn(name = "user_id")
@@ -67,11 +67,11 @@ public class User {
         this.email = email;
     }
 
-    public long getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public void setSenha(long senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
