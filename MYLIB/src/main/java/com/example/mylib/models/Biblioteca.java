@@ -16,7 +16,7 @@ public class Biblioteca {
     @Column
     private String nome;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "biblioteca")
     private List<User> usuario;
 
     @ManyToMany

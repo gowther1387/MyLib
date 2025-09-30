@@ -22,7 +22,7 @@ public class AutorController {
     }
 
     @GetMapping("/{id}")
-    public Autor getAutor(@PathVariable UUID id) {
+    public Autor getAutor(@PathVariable Long id) {
         return autorService.getAutor(id);
     }
 
@@ -32,7 +32,7 @@ public class AutorController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteAutor(@PathVariable UUID id) {
+    public void deleteAutor(@PathVariable Long id) {
         autorService.deleteAutor(id);
     }
 

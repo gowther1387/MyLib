@@ -3,6 +3,7 @@ package com.example.mylib.controllers;
 import com.example.mylib.models.User;
 import com.example.mylib.services.UserService;
 import jakarta.validation.Valid;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,10 +13,12 @@ import java.util.List;
 @RequestMapping("/api/biblioteca")
 public class UserController {
 
-    private final UserService userService;
+    private ModelMapper modelMapper ;
+    private UserService userService ;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, ModelMapper modelMapper) {
         this.userService = userService;
+        this.modelMapper = modelMapper;
     }
 
     @PostMapping("/postUser")

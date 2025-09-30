@@ -35,9 +35,8 @@ public class User {
     private String senha;
 
     @ManyToOne()
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "biblioteca_id")
     private Biblioteca biblioteca;
-
 
     public String getUsername() {
         return Username;
