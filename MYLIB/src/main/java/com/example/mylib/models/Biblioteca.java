@@ -19,8 +19,14 @@ public class Biblioteca {
     @OneToMany(mappedBy = "user")
     private List<User> usuario;
 
-    @Column
+    @ManyToMany
+    @JoinTable(
+            name = "biblioteca_livro", // Nome da tabela intermediária
+            joinColumns = @JoinColumn(name = "biblioteca_id"), // Chave estrangeira para Biblioteca
+            inverseJoinColumns = @JoinColumn(name = "livro_id") // Chave estrangeira para Livro
+    )
     private List<Livro> livros;
+    
 
     public long getBibliotecaId() {
         return bibliotecaId;

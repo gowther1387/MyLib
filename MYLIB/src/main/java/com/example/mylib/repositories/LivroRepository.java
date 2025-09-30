@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.UUID;
 
-public interface LivroRepository extends JpaRepository<Livro, UUID> {
+public interface LivroRepository extends JpaRepository<Livro, Long> {
 
-    Livro findLivroById(UUID id);
+    Livro findLivroById(Long id);
     Livro findLivroByTitulo(String titulo);
     List<Livro> findAllByCategoria(Categoria categoria);
     List<Livro> findAllByAutor(String autor);

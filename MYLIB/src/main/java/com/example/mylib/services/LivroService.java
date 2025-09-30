@@ -23,7 +23,7 @@ public class LivroService {
         return livroRepository.save(livro);
     }
 
-    public Livro getLivro(UUID id){
+    public Livro getLivro(Long id){
         return livroRepository.findLivroById(id);
     }
 
@@ -43,7 +43,7 @@ public class LivroService {
         return livroRepository.findAllByCategoria(categoria);
     }
 
-    public void deleteLivro(UUID id){
+    public void deleteLivro(Long id){
         livroRepository.deleteById(id);
     }
 

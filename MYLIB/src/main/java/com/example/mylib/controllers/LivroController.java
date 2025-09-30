@@ -23,7 +23,7 @@ public class LivroController {
     }
 
     @GetMapping("/buscar/{id}")
-    public Livro getLivroById(UUID id){
+    public Livro getLivroById(Long id){
         return livroService.getLivro(id);
     }
     @GetMapping
@@ -32,7 +32,7 @@ public class LivroController {
     }
 
     @DeleteMapping
-    public void deleteLivro(UUID id){
+    public void deleteLivro(Long id){
         livroService.deleteLivro(id);
 
     }

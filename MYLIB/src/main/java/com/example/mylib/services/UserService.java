@@ -22,7 +22,7 @@ public User postUser(User user){
 }
 
 
-public User getUser(UUID id){
+public User getUser(Long id){
     return userRepository.getUsersById(id);
 }
 
@@ -30,7 +30,7 @@ public List<User> getUsers(){
     return userRepository.findAll();
 }
 
-public void deleteUser(UUID id){
+public void deleteUser(Long id){
     userRepository.deleteById(id);
 }
 

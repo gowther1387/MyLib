@@ -4,6 +4,7 @@ import com.example.mylib.Categoria;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -12,7 +13,7 @@ public class Livro {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "livro_id")
     private long id;
 
@@ -35,6 +36,17 @@ public class Livro {
     @JoinColumn(name = "autor_id")
     private Autor autor;
 
+    @ManyToMany(mappedBy = "livros")
+    private List<Biblioteca> bibliotecas;
+
+
+    public List<Biblioteca> getBibliotecas() {
+        return bibliotecas;
+    }
+
+    public void setBibliotecas(List<Biblioteca> bibliotecas) {
+        this.bibliotecas = bibliotecas;
+    }
 
     public long getId() {
         return id;

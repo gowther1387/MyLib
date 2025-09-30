@@ -33,7 +33,7 @@ public class BibliotecaService {
         bibliotecaRepository.save(biblioteca);
     }
 
-    public Biblioteca addUsuario(Long id, UUID userId) {
+    public Biblioteca addUsuario(Long id, Long userId) {
         Biblioteca biblioteca = bibliotecaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Biblioteca não encontrada"));
 
@@ -44,7 +44,7 @@ public class BibliotecaService {
         return bibliotecaRepository.save(biblioteca);
     }
 
-    public Biblioteca pathLivro(long id) {
+    public Biblioteca pathLivro(Long id) {
         Optional<Biblioteca> bibliotecaOptional = bibliotecaRepository.findById(id);
         if (bibliotecaOptional.isPresent()) {
             Biblioteca biblioteca = bibliotecaOptional.get();
@@ -54,7 +54,7 @@ public class BibliotecaService {
         return null;
     }
 
-    public Biblioteca removerLivro(Long bibliotecaId, UUID id) {
+    public Biblioteca removerLivro(Long bibliotecaId, Long id) {
         Biblioteca biblioteca = bibliotecaRepository.findById(bibliotecaId)
                 .orElseThrow(() -> new RuntimeException("Biblioteca não encontrada"));
 

@@ -1,7 +1,7 @@
 package com.example.mylib.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Autor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "autor_id")
     private long autorId;
 

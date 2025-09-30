@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;
 
-public interface AutorRepository extends JpaRepository<Autor,UUID> {
-    Autor getAutorById(UUID id);
+public interface AutorRepository extends JpaRepository<Autor,Long> {
+    Autor getAutorById(Long id);
 }

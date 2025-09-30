@@ -19,7 +19,7 @@ public class AutorService {
         return autorRepository.save(autor);
     }
 
-    public Autor getAutor(UUID id) {
+    public Autor getAutor(Long id) {
         return autorRepository.getAutorById(id);
     }
 
@@ -27,7 +27,7 @@ public class AutorService {
         return autorRepository.findAll();
     }
 
-    public void deleteAutor(UUID id) {
+    public void deleteAutor(Long id) {
         autorRepository.deleteById(id);
     }
 }
