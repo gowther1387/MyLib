@@ -24,6 +24,9 @@ public class User {
     @Column(name = "admin")
     private boolean admin;
 
+    @Column(name = "username")
+    private String Username;
+
     @Email
     @Column(name = "email", nullable = false, unique = true)
     private String email;
@@ -34,6 +37,15 @@ public class User {
     @ManyToOne()
     @JoinColumn(name = "user_id")
     private Biblioteca biblioteca;
+
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
 
     public long getUserId() {
         return userId;
